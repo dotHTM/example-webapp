@@ -1,0 +1,42 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb:10.3.9
+    environment:
+      MYSQL_ROOT_PASSWORD: 'asodihas90yc08ayhscnaoshc0ajw'
+    # ports:
+  #     - 3306:3306
+  #   restart: always
+
+  # adminer:
+  #   image: adminer
+  #   ports:
+  #     - 8080:8080
+  #   restart: always
+
+  apache:
+    build: 
+      context: ./
+      dockerfile: apache.dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - "./vol/apache/_conf:/usr/local/apache2/conf"
+      - "./vol/apache/_cgi-bin:/usr/local/apache2/cgi-bin"
+      - "./vol/apache/_htdocs:/usr/local/apache2/htdocs"
+      - "./vol/apache/_assets:/usr/local/apache2/assets"
+      - "./vol/apache/_lib:/usr/local/lib/site_perl"
+
+
+
+
+      
+      
+      
+      
+      
+      
+      

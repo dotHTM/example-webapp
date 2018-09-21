@@ -1,0 +1,13 @@
+
+body{
+    background: #333;
+    color: #ddd;
+}
+
+.subdued {
+    color: #888;
+}
+
+.theme{
+    {% if theme_color %}color: {{theme_color}};{% endif %}
+}

@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+
+  apache:
+    depends_on:
+      - apache-init
+    image: httpd:2.4.34
+    volumes:
+      - "./vol/apache/conf:/usr/local/apache2/conf_"
